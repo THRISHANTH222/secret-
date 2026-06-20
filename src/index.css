@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+  --color-primary: #a855f7;
+  --color-accent: #f43f5e;
+  --color-dark-bg: #07020d;
+}
+
+/* Custom Utilities and Animations */
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #07020d;
+  color: #f3f4f6;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+/* Custom background with rich deep purple-black glow */
+.bg-gradient-radial {
+  background: radial-gradient(circle at center, #1c0933 0%, #06010c 100%);
+}
+
+.glass-card {
+  background: rgba(18, 10, 36, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(168, 85, 247, 0.15);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6);
+}
+
+.glass-card-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  background: rgba(28, 15, 55, 0.7);
+  border-color: rgba(168, 85, 247, 0.35);
+  box-shadow: 0 16px 48px 0 rgba(168, 85, 247, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Custom animations for background grids or particles */
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-105vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animate-float-particle {
+  position: absolute;
+  bottom: -50px;
+  pointer-events: none;
+  animation: float linear infinite;
+}
+
+/* Custom glow effects */
+.text-glow-purple {
+  text-shadow: 0 0 12px rgba(168, 85, 247, 0.6), 0 0 24px rgba(168, 85, 247, 0.3);
+}
+
+.text-glow-rose {
+  text-shadow: 0 0 12px rgba(244, 63, 94, 0.6), 0 0 24px rgba(244, 63, 94, 0.3);
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #06010c;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, 0.6);
+}
+
+/* Custom styles for Envelope */
+.envelope-wrapper {
+  position: relative;
+  width: 280px;
+  height: 180px;
+  background: rgba(168, 85, 247, 0.15);
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+/* Simple helper for non-selectable text */
+.no-select {
+  user-select: none;
+}
